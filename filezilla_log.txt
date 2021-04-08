@@ -1,0 +1,91 @@
+FileZilla Server version 0.9.41 beta
+Copyright 2001-2012 by Tim Kosse (tim.kosse@filezilla-project.org)
+Connecting to server...
+Connected, waiting for authentication
+Logged on
+(000061)08.04.2021 17:28:20 - (not logged in) (::1)> Connected, sending welcome message...
+(000061)08.04.2021 17:28:20 - (not logged in) (::1)> 220-FileZilla Server version 0.9.41 beta
+(000061)08.04.2021 17:28:20 - (not logged in) (::1)> 220-written by Tim Kosse (Tim.Kosse@gmx.de)
+(000061)08.04.2021 17:28:20 - (not logged in) (::1)> 220 Please visit http://sourceforge.net/projects/filezilla/
+(000061)08.04.2021 17:28:20 - (not logged in) (::1)> USER mantis
+(000061)08.04.2021 17:28:20 - (not logged in) (::1)> 331 Password required for mantis
+(000061)08.04.2021 17:28:20 - (not logged in) (::1)> PASS ******
+(000061)08.04.2021 17:28:20 - mantis (::1)> 230 Logged on
+(000061)08.04.2021 17:28:20 - mantis (::1)> PWD
+(000061)08.04.2021 17:28:20 - mantis (::1)> 257 "/" is current directory.
+(000061)08.04.2021 17:28:20 - mantis (::1)> CWD /
+(000061)08.04.2021 17:28:20 - mantis (::1)> 250 CWD successful. "/" is current directory.
+(000061)08.04.2021 17:28:20 - mantis (::1)> CWD /
+(000061)08.04.2021 17:28:20 - mantis (::1)> 250 CWD successful. "/" is current directory.
+(000061)08.04.2021 17:28:20 - mantis (::1)> TYPE A
+(000061)08.04.2021 17:28:20 - mantis (::1)> 200 Type set to A
+(000061)08.04.2021 17:28:20 - mantis (::1)> EPSV
+(000061)08.04.2021 17:28:20 - mantis (::1)> 229 Entering Extended Passive Mode (|||59458|)
+(000061)08.04.2021 17:28:20 - mantis (::1)> LIST
+(000061)08.04.2021 17:28:20 - mantis (::1)> 150 Connection accepted
+(000061)08.04.2021 17:28:20 - mantis (::1)> 226 Transfer OK
+(000061)08.04.2021 17:28:20 - mantis (::1)> CWD /
+(000061)08.04.2021 17:28:20 - mantis (::1)> 250 CWD successful. "/" is current directory.
+(000061)08.04.2021 17:28:20 - mantis (::1)> CWD /
+(000061)08.04.2021 17:28:20 - mantis (::1)> 250 CWD successful. "/" is current directory.
+(000061)08.04.2021 17:28:20 - mantis (::1)> RNFR config_inc.php
+(000061)08.04.2021 17:28:20 - mantis (::1)> 350 File exists, ready for destination name.
+(000061)08.04.2021 17:28:20 - mantis (::1)> RNTO config_inc.php.bak
+(000061)08.04.2021 17:28:20 - mantis (::1)> 250 file renamed successfully
+(000062)08.04.2021 17:28:20 - (not logged in) (::1)> Connected, sending welcome message...
+(000062)08.04.2021 17:28:20 - (not logged in) (::1)> 220-FileZilla Server version 0.9.41 beta
+(000062)08.04.2021 17:28:20 - (not logged in) (::1)> 220-written by Tim Kosse (Tim.Kosse@gmx.de)
+(000062)08.04.2021 17:28:20 - (not logged in) (::1)> 220 Please visit http://sourceforge.net/projects/filezilla/
+(000062)08.04.2021 17:28:20 - (not logged in) (::1)> USER mantis
+(000062)08.04.2021 17:28:20 - (not logged in) (::1)> 331 Password required for mantis
+(000062)08.04.2021 17:28:20 - (not logged in) (::1)> PASS ******
+(000062)08.04.2021 17:28:20 - mantis (::1)> 230 Logged on
+(000062)08.04.2021 17:28:20 - mantis (::1)> PWD
+(000062)08.04.2021 17:28:20 - mantis (::1)> 257 "/" is current directory.
+(000062)08.04.2021 17:28:20 - mantis (::1)> CWD /
+(000062)08.04.2021 17:28:20 - mantis (::1)> 250 CWD successful. "/" is current directory.
+(000062)08.04.2021 17:28:20 - mantis (::1)> TYPE I
+(000062)08.04.2021 17:28:20 - mantis (::1)> 200 Type set to I
+(000062)08.04.2021 17:28:20 - mantis (::1)> EPSV
+(000062)08.04.2021 17:28:20 - mantis (::1)> 229 Entering Extended Passive Mode (|||59461|)
+(000062)08.04.2021 17:28:20 - mantis (::1)> STOR config_inc.php
+(000062)08.04.2021 17:28:20 - mantis (::1)> 150 Connection accepted
+(000062)08.04.2021 17:28:20 - mantis (::1)> 226 Transfer OK
+(000062)08.04.2021 17:28:20 - mantis (::1)> disconnected.
+(000061)08.04.2021 17:28:20 - mantis (::1)> disconnected.
+(000063)08.04.2021 17:28:27 - (not logged in) (::1)> Connected, sending welcome message...
+(000063)08.04.2021 17:28:27 - (not logged in) (::1)> 220-FileZilla Server version 0.9.41 beta
+(000063)08.04.2021 17:28:27 - (not logged in) (::1)> 220-written by Tim Kosse (Tim.Kosse@gmx.de)
+(000063)08.04.2021 17:28:27 - (not logged in) (::1)> 220 Please visit http://sourceforge.net/projects/filezilla/
+(000063)08.04.2021 17:28:27 - (not logged in) (::1)> USER mantis
+(000063)08.04.2021 17:28:27 - (not logged in) (::1)> 331 Password required for mantis
+(000063)08.04.2021 17:28:27 - (not logged in) (::1)> PASS ******
+(000063)08.04.2021 17:28:27 - mantis (::1)> 230 Logged on
+(000063)08.04.2021 17:28:27 - mantis (::1)> PWD
+(000063)08.04.2021 17:28:27 - mantis (::1)> 257 "/" is current directory.
+(000063)08.04.2021 17:28:27 - mantis (::1)> CWD /
+(000063)08.04.2021 17:28:27 - mantis (::1)> 250 CWD successful. "/" is current directory.
+(000063)08.04.2021 17:28:27 - mantis (::1)> CWD /
+(000063)08.04.2021 17:28:27 - mantis (::1)> 250 CWD successful. "/" is current directory.
+(000063)08.04.2021 17:28:27 - mantis (::1)> TYPE A
+(000063)08.04.2021 17:28:27 - mantis (::1)> 200 Type set to A
+(000063)08.04.2021 17:28:27 - mantis (::1)> EPSV
+(000063)08.04.2021 17:28:27 - mantis (::1)> 229 Entering Extended Passive Mode (|||59516|)
+(000063)08.04.2021 17:28:27 - mantis (::1)> LIST
+(000063)08.04.2021 17:28:27 - mantis (::1)> 150 Connection accepted
+(000063)08.04.2021 17:28:27 - mantis (::1)> 226 Transfer OK
+(000063)08.04.2021 17:28:27 - mantis (::1)> CWD /
+(000063)08.04.2021 17:28:27 - mantis (::1)> 250 CWD successful. "/" is current directory.
+(000063)08.04.2021 17:28:27 - mantis (::1)> CWD /
+(000063)08.04.2021 17:28:27 - mantis (::1)> 250 CWD successful. "/" is current directory.
+(000063)08.04.2021 17:28:27 - mantis (::1)> CWD /
+(000063)08.04.2021 17:28:27 - mantis (::1)> 250 CWD successful. "/" is current directory.
+(000063)08.04.2021 17:28:27 - mantis (::1)> DELE config_inc.php.bak
+(000063)08.04.2021 17:28:27 - mantis (::1)> 250 File deleted successfully
+(000063)08.04.2021 17:28:27 - mantis (::1)> CWD /
+(000063)08.04.2021 17:28:27 - mantis (::1)> 250 CWD successful. "/" is current directory.
+(000063)08.04.2021 17:28:27 - mantis (::1)> CWD /
+(000063)08.04.2021 17:28:27 - mantis (::1)> 250 CWD successful. "/" is current directory.
+(000063)08.04.2021 17:28:27 - mantis (::1)> RNFR config_inc.php.bak
+(000063)08.04.2021 17:28:27 - mantis (::1)> 550 file/directory not found
+(000063)08.04.2021 17:28:27 - mantis (::1)> disconnected.
