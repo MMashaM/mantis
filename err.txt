@@ -1,0 +1,122 @@
+test/test_login.py::test_login 
+test/test_login.py::test_login ERROR                                     [100%]PASSED                                    [100%]
+test\test_login.py:2 (test_login)
+self = <ftputil.host.FTPHost object at 0x000002045FF67820>
+source = 'config_inc.php.bak', target = 'config_inc.php'
+
+    def rename(self, source, target):
+        """
+        Rename the source on the FTP host to target.
+        """
+        source = ftputil.tool.as_str_path(source, encoding=self._encoding)
+        target = ftputil.tool.as_str_path(target, encoding=self._encoding)
+        # The following code is in spirit similar to the code in the method
+        # `_robust_ftp_command`, though we do _not_ do _everything_ imaginable.
+        self._check_inaccessible_login_directory()
+        source_head, source_tail = self.path.split(source)
+        target_head, target_tail = self.path.split(target)
+        paths_contain_whitespace = (" " in source_head) or (" " in target_head)
+        if paths_contain_whitespace and source_head == target_head:
+            # Both items are in the same directory.
+            old_dir = self.getcwd()
+            try:
+                self.chdir(source_head)
+                with ftputil.error.ftplib_error_to_ftp_os_error:
+                    self._session.rename(source_tail, target_tail)
+            finally:
+                self.chdir(old_dir)
+        else:
+            # Use straightforward command.
+            with ftputil.error.ftplib_error_to_ftp_os_error:
+>               self._session.rename(source, target)
+
+env\lib\site-packages\ftputil\host.py:889: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <ftputil.host.default_session_factory object at 0x000002045FF67670>
+fromname = 'config_inc.php.bak', toname = 'config_inc.php'
+
+    def rename(self, fromname, toname):
+        '''Rename a file.'''
+>       resp = self.sendcmd('RNFR ' + fromname)
+
+c:\python39\lib\ftplib.py:594: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <ftputil.host.default_session_factory object at 0x000002045FF67670>
+cmd = 'RNFR config_inc.php.bak'
+
+    def sendcmd(self, cmd):
+        '''Send a command and return the response.'''
+        self.putcmd(cmd)
+>       return self.getresp()
+
+c:\python39\lib\ftplib.py:279: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <ftputil.host.default_session_factory object at 0x000002045FF67670>
+
+    def getresp(self):
+        resp = self.getmultiline()
+        if self.debugging:
+            print('*resp*', self.sanitize(resp))
+        self.lastresp = resp[:3]
+        c = resp[:1]
+        if c in {'1', '2', '3'}:
+            return resp
+        if c == '4':
+            raise error_temp(resp)
+        if c == '5':
+>           raise error_perm(resp)
+E           ftplib.error_perm: 550 file/directory not found
+
+c:\python39\lib\ftplib.py:252: error_perm
+
+The above exception was the direct cause of the following exception:
+
+    def fin():
+>       restore_server_configuration(config['ftp']['host'], config['ftp']['username'], config['ftp']['password'])
+
+conftest.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+conftest.py:57: in restore_server_configuration
+    remote.rename("config_inc.php.bak", "config_inc.php")
+env\lib\site-packages\ftputil\host.py:889: in rename
+    self._session.rename(source, target)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <ftputil.error.FtplibErrorToFTPOSError object at 0x000002045FF5B040>
+exc_type = <class 'ftplib.error_perm'>
+exc_value = error_perm('550 file/directory not found')
+traceback = <traceback object at 0x000002045F43C900>
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        if exc_type is None:
+            # No exception
+            return
+        if isinstance(exc_value, ftplib.error_temp):
+            raise TemporaryError(
+                *exc_value.args, original_error=exc_value
+            ) from exc_value
+        elif isinstance(exc_value, ftplib.error_perm):
+            # If `exc_value.args[0]` is present, assume it's a byte or unicode
+            # string.
+            if exc_value.args and ftputil.tool.as_str(
+                exc_value.args[0], ftputil.path_encoding.DEFAULT_ENCODING
+            ).startswith("502"):
+                raise CommandNotImplementedError(
+                    *exc_value.args, original_error=exc_value
+                ) from exc_value
+            else:
+>               raise PermanentError(
+                    *exc_value.args, original_error=exc_value
+E                   ftputil.error.PermanentError: 550 file/directory not found
+E                   Debugging info: ftputil 5.0.1, Python 3.9.2 (win32)
+
+env\lib\site-packages\ftputil\error.py:195: PermanentError
+
+
+
+Assertion failed
+
+Assertion failed
