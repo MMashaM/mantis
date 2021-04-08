@@ -10,5 +10,11 @@
     "host": "localhost",
     "username": "mantis",
     "password": "mantis"
+  },
+  "db" : {
+    "host" : "localhost",
+    "name" : "bugtracker",
+    "user" : "root",
+    "password" : ""
   }
 }
