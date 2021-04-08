@@ -1,6 +1,7 @@
 from selenium import webdriver
 from fixture.session import SessionHelper
 from fixture.project import ProjectHelper
+from fixture.soap import SoapHelper
 
 
 class Application:
@@ -16,6 +17,7 @@ class Application:
             raise ValueError("Unrecognized browser %s" % browser)
         # self.wd.implicitly_wait(5)
         self.session = SessionHelper(self)
+        self.soap = SoapHelper(self)
         self.base_url = base_url
         self.project = ProjectHelper(self)
 

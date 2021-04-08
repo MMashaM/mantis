@@ -33,6 +33,7 @@ class ProjectHelper:
         wd.find_element_by_xpath("//input[@value='Add Project']").click()
 
     def create_new_project(self, project):
+        wd = self.app.wd
         self.open_project_page()
         self.create_project()
         self.fill_in_project(project)
@@ -46,4 +47,4 @@ class ProjectHelper:
         wd = self.app.wd
         wd.find_element_by_link_text(name).click()
         self.dell_project()
-        self.dell_project()
+        #self.dell_project()
