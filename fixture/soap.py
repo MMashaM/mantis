@@ -18,4 +18,12 @@ class SoapHelper:
 
     def get_list_project(self, username, password):
         client = Client(self.app.base_url + "/api/soap/mantisconnect.php?wsdl")
-        return client.service.mc_projects_get_user_accessible(username, password)
+        list = client.service.mc_projects_get_user_accessible(username, password)
+        project_list = []
+        for el in list:
+            id = el[0]
+            name = el[1]
+            description = el[7]
+            project_list.append(
+                Project(id=str(id), name=name, description=description))
+        return project_list

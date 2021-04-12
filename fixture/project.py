@@ -15,25 +15,24 @@ class ProjectHelper:
         wd = self.app.wd
         wd.find_element_by_xpath("//input[@value='Create New Project']").click()
 
-    def fill_in_project(self, project):
+    def fill_in_project(self, Project):
         wd = self.app.wd
         wd.find_element_by_name("name").click()
         wd.find_element_by_name("name").clear()
-        wd.find_element_by_name("name").send_keys(project.name)
+        wd.find_element_by_name("name").send_keys(Project.name)
         wd.find_element_by_name("status").click()
-        Select(wd.find_element_by_name("status")).select_by_visible_text(project.status)
+        Select(wd.find_element_by_name("status")).select_by_visible_text(Project.status)
         wd.find_element_by_name("view_state").click()
-        Select(wd.find_element_by_name("view_state")).select_by_visible_text(project.view)
+        Select(wd.find_element_by_name("view_state")).select_by_visible_text(Project.view)
         wd.find_element_by_name("description").click()
         wd.find_element_by_name("description").clear()
-        wd.find_element_by_name("description").send_keys(project.description)
+        wd.find_element_by_name("description").send_keys(Project.description)
 
     def save_project(self):
         wd = self.app.wd
         wd.find_element_by_xpath("//input[@value='Add Project']").click()
 
     def create_new_project(self, project):
-        wd = self.app.wd
         self.open_project_page()
         self.create_project()
         self.fill_in_project(project)
@@ -47,4 +46,3 @@ class ProjectHelper:
         wd = self.app.wd
         wd.find_element_by_link_text(name).click()
         self.dell_project()
-        #self.dell_project()
