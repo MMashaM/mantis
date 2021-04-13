@@ -14,5 +14,5 @@ def test_dell_project(app, db, json_project):
     app.project.delete_project_by_name(project.name)
     new_project = app.soap.get_list_project(username, password)
     old_project.remove(project)
-    assert len(old_project) == len(new_project)
+    #assert len(old_project) == len(new_project)
     assert sorted(old_project, key=Project.id_or_max) == sorted(new_project, key=Project.id_or_max)
